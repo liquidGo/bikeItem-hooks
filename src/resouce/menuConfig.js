@@ -34,7 +34,7 @@ const menuList = [
                 key:'/admin/ui/tabs',
             },
             {
-                label:<Link to='admin/ui/gallery'>图片画廊</Link>,
+                label:<Link to='/admin/ui/gallery'>图片画廊</Link>,
                 key:'/admin/ui/gallery',
             },
             {
