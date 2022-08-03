@@ -12,6 +12,8 @@ import Notification from './ui/Notification'
 import Tabs1 from './ui/Tabs'
 import Gallerys from './ui/Gallerys'
 import Carousel1 from './ui/Carousel'
+import Login1 from './page/form/Login'
+import Registers from './page/form/Registers'
 
 export default function Routers() {
     return (
@@ -32,6 +34,8 @@ export default function Routers() {
                                     <Route path='/admin/ui/tabs' component={Tabs1}></Route>
                                     <Route path='/admin/ui/gallery' component={Gallerys}></Route>
                                     <Route path='/admin/ui/carousel' component={Carousel1} ></Route>
+                                    <Route path='/admin/form/login' component={Login1} ></Route>
+                                    <Route path='/admin/form/reg' component={Registers} ></Route>
                                     <Route component={Error}></Route>
                                 </Switch>
                             </App>
