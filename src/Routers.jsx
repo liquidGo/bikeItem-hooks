@@ -14,6 +14,8 @@ import Gallerys from './ui/Gallerys'
 import Carousel1 from './ui/Carousel'
 import Login1 from './page/form/Login'
 import Registers from './page/form/Registers'
+import TableBasic from './page/Table/TableBasic'
+import HightTable from './page/Table/HightTable'
 
 export default function Routers() {
     return (
@@ -36,6 +38,8 @@ export default function Routers() {
                                     <Route path='/admin/ui/carousel' component={Carousel1} ></Route>
                                     <Route path='/admin/form/login' component={Login1} ></Route>
                                     <Route path='/admin/form/reg' component={Registers} ></Route>
+                                    <Route path='/admin/table/basic' component={TableBasic} ></Route>
+                                    <Route path='/admin/table/high' component={HightTable} ></Route>
                                     <Route component={Error}></Route>
                                 </Switch>
                             </App>

@@ -2,7 +2,7 @@ import Mock from 'mockjs'
 Mock.setup({ timeout: 1000 })
 Mock.mock('high.php', 'post', function (option) {
   // console.log(JSON.parse(option.body).params.page, '123123sf');
-  let data = JSON.parse(option.body).params.page
+  // let data = JSON.parse(option.body).params.page
   return Mock.mock(
     {
       "code": 0,
@@ -27,7 +27,7 @@ Mock.mock('high.php', 'post', function (option) {
           "address": "北京市海淀区",
           "time": "09:00:00"
         }],
-        page: data,
+        page: 1,
         page_size: 5,
         total_count: 30
       }

@@ -1,8 +1,10 @@
 import Mock from 'mockjs'
 Mock.setup({ timeout: 1000 })
 Mock.mock('tableList.php', 'post', function (option) {
-    // console.log(JSON.parse(option.body).params.page ,'123123sf');
+    console.log(JSON.parse(option.body).params.page ,'123123sf');
+    // console.log(option,'opti');
     let data=JSON.parse(option.body).params.page
+    // console.log(data,'data');
     return Mock.mock(
         {
             "code": '0',
