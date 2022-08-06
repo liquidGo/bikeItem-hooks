@@ -17,6 +17,10 @@ import Registers from './page/form/Registers'
 import TableBasic from './page/Table/TableBasic'
 import HightTable from './page/Table/HightTable'
 import Rich from './page/Rich/Rich'
+import City from './page/City/City'
+import Order from './page/Order/Order'
+import Order_details from './page/Order/Order_details'
+import TargetPageCommon from '../src/TargetPageCommon'
 
 export default function Routers() {
     return (
@@ -24,6 +28,13 @@ export default function Routers() {
             <Router>
                 <Admin>
                     <Switch>
+                        <Route path='/common' render={() =>
+                            <TargetPageCommon>
+                                <Route path='/common/detail/:status/:order_sn/:bike_sn/:user_name/:distance' component={Order_details}></Route>
+                            </TargetPageCommon>
+                        }
+                        >
+                        </Route>
                         <Route path='/' render={() => (
                             <App>
                                 <Switch>
@@ -42,6 +53,8 @@ export default function Routers() {
                                     <Route path='/admin/table/basic' component={TableBasic} ></Route>
                                     <Route path='/admin/table/high' component={HightTable} ></Route>
                                     <Route path='/admin/rich' component={Rich}></Route>
+                                    <Route path='/admin/city' component={City}></Route>
+                                    <Route path='/admin/order' component={Order}></Route>
                                     <Route component={Error}></Route>
                                 </Switch>
                             </App>

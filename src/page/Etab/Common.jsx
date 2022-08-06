@@ -56,7 +56,7 @@ export default function Common(props) {
                 break;
             default:
 
-                console.log('3333');
+                console.log(columns,'3333');
                 return (
                     <Table
                         columns={columns}

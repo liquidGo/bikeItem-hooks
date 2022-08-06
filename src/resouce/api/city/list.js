@@ -1,8 +1,7 @@
 import Mock from 'mockjs';
 Mock.setup({ timeout: 2000 });
 Mock.mock('cityData.php', 'post', function (option) {
-    let data = JSON.parse(option.body).params.page
-    console.log(data, 'page');
+    // let data = JSON.parse(option.body).params.page
     let da = new Date(Date.now())
     let time = da.getFullYear() + '-' + (da.getMonth() + 1) + '-' + da.getDate();
     console.log(option)
@@ -11,7 +10,7 @@ Mock.mock('cityData.php', 'post', function (option) {
             "code": 0,
             "message": "",
             "result": {
-                "page": data,
+                "page": 1,
                 "page_size": 10,
                 "total_count": 25,
                 "paga_count": 6,

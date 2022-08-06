@@ -1,8 +1,9 @@
 import Mock from 'mockjs';
 Mock.setup({ timeout: 2000 });
 Mock.mock('detail.php', 'post', function (option) {
+  // alert('123')
   let data = JSON.parse(option.body)
-  console.log(data,'data');
+  // console.log(data,'data');
   // console.log(data, 'page');
   // let da = new Date(Date.now())
   // let time = da.getFullYear() + '-' + (da.getMonth() + 1) + '-' + da.getDate();

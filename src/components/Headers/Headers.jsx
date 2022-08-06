@@ -3,7 +3,7 @@ import { Row, Col } from 'antd'
 import Packaging from '../../packaging/Packaging'
 import '../Headers/index.less'
 
-export default function Headers() {
+export default function Headers(props) {
     let [welComeName, setwelComeName] = useState('左岸')
     let [weather, setWeather] = useState('')
     let [time, setTime] = useState('')
@@ -20,21 +20,32 @@ export default function Headers() {
         }, 1000);
 
     }, [])
+
+
+    let { menuType } = props
     return (
         <div className='header'>
-            <Row className='header-top'>
-                <Col span={24}>
-                    <span>欢迎,{welComeName}</span>
-                    <a href="#">退出</a>
+            <Row className='header-top' >
+                {
+                    menuType ? <Col span={6} className='logo'>
+                        <img src="/assets/logo-ant.svg" alt="" />
+                        <span>左岸管理系统</span>
+                    </Col> : ''
+                }
+                <Col span={menuType ? 18 : 24}>
+                    <span>欢迎，{welComeName}</span>
+                    <a href='#'>退出</a>
                 </Col>
             </Row>
-            <Row className='breadcrumb'>
-                <Col span={4} className='breadcrumb-title'>首页</Col>
-                <Col span={20} className='weather'>
-                    <span className='data'>{time} </span>
-                    <span className='weather-datial'>{`${weather.city} ${weather.wea} ${weather.tem}°`}</span>
-                </Col>
-            </Row>
+            {
+                menuType ? '' : <Row className='breadcrumb'>
+                    <Col span={4} className='breadcrumb-title'>首页</Col>
+                    <Col span={20} className='weather'>
+                        <span className='data'>{time} </span>
+                        <span className='weather-datial'>{`${weather.city} ${weather.wea} ${weather.tem}°`}</span>
+                    </Col>
+                </Row>}
+
         </div>
     )
 }
